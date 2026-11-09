@@ -156,7 +156,7 @@ Arquivo: `.github/workflows/node.js.yml`. Roda em todo `push` e `pull_request` n
 
 | Job | Etapas |
 |-----|--------|
-| **Run E2E Tests** | `npm ci` → `npx playwright install --with-deps chromium` → `npm run verify` → `npm run actions` → envia `artifacts/` como artefato `playwright-report` |
+| **Run E2E Tests** (`ubuntu-24.04`, versão do Ubuntu suportada pelo Playwright 1.56) | `npm ci` → `npx playwright install --with-deps chromium` → `npm run verify` → `npm run actions` → envia `artifacts/` como artefato `playwright-report` |
 | **Run SonarCloud** | Checkout com histórico completo → `SonarSource/sonarqube-scan-action` usando `sonar-project.properties` |
 
 Segredo necessário no repositório: `SONAR_TOKEN` (em *Settings → Secrets and variables → Actions*).
