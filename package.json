@@ -1,0 +1,27 @@
+{
+  "name": "prova03-e2e-playwright-carlosschefferr",
+  "version": "1.0.0",
+  "description": "Testes E2E do site da Web Brain (https://www.webbrain.com.br/) usando MS Playwright",
+  "author": "CarlosSchefferr",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@types/node": "^22.10.0",
+    "mkdirp": "^3.0.1",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "clean": "rimraf ./artifacts && mkdirp ./artifacts",
+    "format": "prettier --write \"**/**.[jt]s?(x)\"",
+    "verify": "prettier --check \"**/**.[jt]s?(x)\"",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "debug": "playwright test --debug --workers 1",
+    "ui": "playwright test --ui --workers 1",
+    "show-report": "playwright show-report artifacts/report",
+    "actions": "playwright test --workers 1",
+    "ci": "npm run clean && npm run verify && npm run typecheck && npm run test"
+  }
+}
